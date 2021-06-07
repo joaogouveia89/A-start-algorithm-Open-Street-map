@@ -20,6 +20,8 @@ class RoutePlanner {
     std::vector<RouteModel::Node> ConstructFinalPath(RouteModel::Node *);
     RouteModel::Node *NextNode();
 
+    void CellSort(std::vector<RouteModel::Node*>*);
+
   private:
     // Add private variables or methods declarations here.
     std::vector<RouteModel::Node*> open_list;
@@ -28,6 +30,8 @@ class RoutePlanner {
 
     float distance = 0.0f;
     RouteModel &m_Model;
+
+    static bool Compare(const RouteModel::Node*, const RouteModel::Node*);
 };
 
 #endif
